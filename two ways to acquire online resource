@@ -1,0 +1,32 @@
+from urllib import request
+from bs4 import BeautifulSoup
+import re
+import os
+import urllib
+import pandas as pd
+import requests
+url = 'https://www4.stat.ncsu.edu/~boos/var.select/baseball.txt'
+url_content = requests.get(url).content
+csv_file = open('pd.csv', 'wb')
+
+csv_file.write(url_content)
+csv_file.close()
+
+df = pd.read_csv(url)
+
+
+#or
+import os
+print(os.getcwd())
+
+import requests
+
+import urllib.request
+
+req = requests.get('https://www.princeton.edu/~mwatson/Stock-Watson_4E/Earnings_and_Height.zip')
+url_content = req.content
+csv_file = open('a.zip', 'wb')
+csv_file.write(url_content)
+import zipfile
+with zipfile.ZipFile('C:/Users/Administrator/PycharmProjects/pythonProject5/venv/share/man/man1/homework/a.zip') as train_zip:
+    train_zip.extractall('C:/Users/Administrator/PycharmProjects/pythonProject5/venv/share/man/man1/homework/data')
